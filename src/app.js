@@ -107,7 +107,8 @@ class App extends Component {
             borderRadius: 13,
             flexDirection: "row",
             alignItems: "center",
-            paddingHorizontal: 15 
+            paddingHorizontal: 15,
+            marginBottom: 15
           }}
         >
           <IgIcon name="search" style={{ fontSize: 26, color: "#B1B1B1" }} />
