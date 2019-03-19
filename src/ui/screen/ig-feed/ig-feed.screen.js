@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import { View, Text, Image, StyleSheet, Platform, Dimensions, ScrollView } from "react-native";
+import { 
+    View, 
+    Text, 
+    Image, 
+    StyleSheet, 
+    Platform, 
+    Dimensions, 
+    ScrollView 
+} from "react-native";
 
-import api from "./api/feed.json";
+import api from "../../../api/feed.json";
 import { IgIcon } from "../../components/ig-icon/ig-icon.component";
 import IgFooter from "../../components/ig-footer/ig-footer.component";
 import IgHeader from "../../components/ig-header/ig-header.component";
@@ -23,7 +31,10 @@ class IgFeed extends Component {
                             post.local ? <Text>{post.local}</Text> : null
                         }
                     </View>
-                    <IgIcon name="dots" style={{ fontSize: 20, color: "black" }} />
+                    <IgIcon 
+                        name="dots" 
+                        style={styles.dots} 
+                    />
                 </View>
                 <Image
                     style={styles.postImage}
@@ -34,15 +45,9 @@ class IgFeed extends Component {
                 >
                     {
                         post.liked ?
-                            <IgIcon
-                                name="heart-empty"
-                                style={{ fontSize: 20, margin: 10, color: "black" }}
-                            />
+                            <IgIcon name="heart-empty" style={styles.likes} />
                             :
-                            <IgIcon
-                                name="heart-full"
-                                style={{ fontSize: 20, margin: 10, color: "black" }}
-                            />
+                            <IgIcon name="heart-full" style={styles.likes} />
                     }
                     <Text>{post.curtidas} Likes</Text>
                 </View>
@@ -103,5 +108,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         margin: 10
+    },
+    dots: {
+        fontSize: 20,
+        color: "black"
+    },
+    likes: {
+        fontSize: 20,
+        margin: 10,
+        color: "black"
     }
 });
