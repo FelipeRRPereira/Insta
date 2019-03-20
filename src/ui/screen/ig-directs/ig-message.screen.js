@@ -35,18 +35,27 @@ export default class IgMessage extends Component {
             </View>
         )
     }
+    renderFooter() {
+        return (
+            <View>
+                <IgIcon name="left-arrow"/>
+                <Text>joao316</Text>
+                <IgIcon name="photo-camera-empty" />
+                <IgIcon name="photo-camera-empty" />
+            </View>
+        )
+    }
     render() {
         return (
-            <View style={styles.container}>
+            <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
                 {this.renderHeader()}
-                <KeyboardAvoidingView style={styles.message} behavior="padding" enabled>
-                    <ScrollView style={styles.scrollMessage}>
-                        {
-                            api.message.map((message, index) => this.renderMessage(message, index))
-                        }
-                    </ScrollView>
-                </KeyboardAvoidingView>
-            </View>
+                <ScrollView style={styles.scrollMessage}>
+                    {
+                        api.message.map((message, index) => this.renderMessage(message, index))
+                    }
+                </ScrollView>
+                {this.renderFooter()}
+            </KeyboardAvoidingView>
         )
     }
 }
@@ -85,17 +94,11 @@ const styles = StyleSheet.create({
         borderRadius: 21,
         marginHorizontal: 15
     },
-    message: {
-        display: "flex",
-        flex: 1,
-        flexDirection: "column-reverse",
-        justifyContent: "flex-end",
-        paddingHorizontal: 15,
-    },
     scrollMessage: {
         flex: 1,
-        flexDirection: "column-reverse",
+        //flexDirection: "column-reverse",
         paddingVertical: 15,
+        paddingHorizontal: 20
     },
     leftMassage: {
         alignSelf: "flex-start",

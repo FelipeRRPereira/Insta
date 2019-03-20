@@ -14,9 +14,11 @@ import { IgIcon } from "../../components/ig-icon/ig-icon.component";
 import IgFooter from "../../components/ig-footer/ig-footer.component";
 import IgHeader from "../../components/ig-header/ig-header.component";
 
+import { BaseScreen } from "../base";
+
 const width = Dimensions.get('window').width;
 
-class IgFeed extends Component {
+export class FeedScreen extends BaseScreen {
     renderPost(post, index) {
         return (
             <View key={index}>
@@ -55,7 +57,7 @@ class IgFeed extends Component {
         )
     }
 
-    render() {
+    renderContent() {
         return (
             <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0 }}>
                 <IgHeader />
@@ -72,8 +74,6 @@ class IgFeed extends Component {
         );
     }
 }
-
-export default IgFeed;
 
 const styles = StyleSheet.create({
     container: {
