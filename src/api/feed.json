@@ -25,7 +25,18 @@
       "liked": false
     }
   ],
-  "usuarios": [],
+  "profile": [
+    {
+      "photo":"https://img.freepik.com/free-photo/adorable-jack-russell-retriever-puppy-portrait_53876-64825.jpg?size=338&ext=jpg",
+      "name": "João",
+      "username": "joao316",
+      "website": "joao316.com.br",
+      "bio": "Discipulo",
+      "email": "yeah@joao316.com.br",
+      "phone": "+51.1329385849",
+      "gender": "Male"
+    }
+  ],
   "conversas": [
     {
       "autor": "João",
@@ -62,6 +73,28 @@
       "perfil": "https://image.freepik.com/free-vector/orange-background-with-halloween-pumpkin-face_1199-148.jpg",
       "mensagem": "Olá vivente!",
       "online": true
+    }
+  ],
+  "message": [
+    {
+      "mensagem": "Olá vivente!",
+      "recebida": true,
+      "mensageiro": "joao316"
+    },
+    {
+      "mensagem": "Olá, tudo na paz?",
+      "recebida": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Tudo na paz! Como está a vida ai em São Paulo?",
+      "recebida": true,
+      "mensageiro": "joao316"
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebida": false,
+      "mensageiro": ""
     }
   ]
 }
