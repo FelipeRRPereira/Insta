@@ -78,22 +78,57 @@
   "message": [
     {
       "mensagem": "Olá vivente!",
-      "recebida": true,
+      "recebido": true,
       "mensageiro": "joao316"
     },
     {
       "mensagem": "Olá, tudo na paz?",
-      "recebida": false,
+      "recebido": false,
       "mensageiro": ""
     },
     {
       "mensagem": "Tudo na paz! Como está a vida ai em São Paulo?",
-      "recebida": true,
+      "recebido": true,
       "mensageiro": "joao316"
     },
     {
       "mensagem": "Caótica!",
-      "recebida": false,
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": true,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
+      "mensageiro": ""
+    },
+    {
+      "mensagem": "Caótica!",
+      "recebido": false,
       "mensageiro": ""
     }
   ]
