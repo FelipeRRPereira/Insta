@@ -11,7 +11,6 @@ import {
 
 import api from "../../../api/feed.json";
 import { IgIcon } from "../../components/ig-icon/ig-icon.component";
-import IgFooter from "../../components/ig-footer/ig-footer.component";
 import IgHeader from "../../components/ig-header/ig-header.component";
 
 import { BaseScreen } from "../base";
@@ -69,7 +68,6 @@ export class FeedScreen extends BaseScreen {
                         api.feed.map((post, index) => this.renderPost(post, index))
                     }
                 </ScrollView>
-                <IgFooter />
             </View>
         );
     }
