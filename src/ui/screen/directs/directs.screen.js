@@ -6,41 +6,63 @@ import {
     Image,
     StyleSheet,
     Platform,
-    Dimensions,
-    ScrollView
+    ScrollView,
+    StatusBar,
+    TouchableOpacity
 } from "react-native";
+import { HeaderBackButton, NavigationActions, StackActions } from 'react-navigation'
 
 import api from "@api/feed.json";
 import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
 
 import { BaseScreen } from "@ui/screen/base";
 
-const width = Dimensions.get('window').width;
-
 export class DirectsScreen extends BaseScreen {
+    static navigationOptions = ({ navigation }) => {
+        const title = navigation.getParam('title')
+
+        return {
+            title: title,
+            headerLeft: <HeaderBackButton onPress={navigation.getParam('_onDismiss')} />,
+            headerRight: <TouchableOpacity><IgIcon name="plus" style={styles.iconsDirect} /></TouchableOpacity>
+        }
+    }
+    
+    constructor(props) {
+        super(props)
+
+        this._onDismiss = this._onDismiss.bind(this)
+    }
+
+    _onDismiss() {
+        //this.props.navigation.pop()
+
+        const backAction = NavigationActions.back()
+        this.props.navigation.dispatch(backAction)
+    }
+
+    componentDidMount() {
+        super.componentDidMount()
+
+        this.props.navigation.setParams({
+            _onDismiss: this._onDismiss
+        })
+    }
+
+    screenWillFocus() {
+        StatusBar.setTranslucent(false)
+    }
+
     renderHeaderDirect() {
         return (
-            <View>
-                <View
-                    style={styles.headerDirect}
-                >
-                    <IgIcon name="left-arrow" style={styles.iconsDirect} />
-                    <Text
-                        style={styles.headerTitle}
-                    >Direct</Text>
-                    <IgIcon name="plus" style={styles.iconsDirect} />
-                </View>
-                <View
-                    style={styles.search}
-                >
-                    <IgIcon name="search" style={styles.iconSearch} />
-                    <TextInput
-                        style={styles.inputSearch}
-                        onChangeText={() => null}
-                        placeholder={"Search"}
-                        returnKeyType={"search"}
-                    />
-                </View>
+            <View
+                style={styles.headerDirect}
+            >
+                <IgIcon name="left-arrow" style={styles.iconsDirect} />
+                <Text
+                    style={styles.headerTitle}
+                >Direct</Text>
+                <IgIcon name="plus" style={styles.iconsDirect} />
             </View>
         )
     }
@@ -77,11 +99,23 @@ export class DirectsScreen extends BaseScreen {
             </View>
         )
     }
+    
+    //{this.renderHeaderDirect()}
 
     renderContent() {
         return (
             <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0 }}>
-                {this.renderHeaderDirect()}
+                <View
+                    style={styles.search}
+                >
+                    <IgIcon name="search" style={styles.iconSearch} />
+                    <TextInput
+                        style={styles.inputSearch}
+                        onChangeText={() => null}
+                        placeholder={"Search"}
+                        returnKeyType={"search"}
+                    />
+                </View>
                 <ScrollView
                     style={styles.container}
                     contentContainerStyle={{ paddingTop: Platform.OS === 'ios' ? 20 : 0 }}
@@ -115,7 +149,8 @@ const styles = StyleSheet.create({
     },
     iconsDirect: { 
         fontSize: 34, 
-        color: "black" 
+        color: "black",
+        marginRight: 15
     },
     search: {
         height: 57,
@@ -125,7 +160,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         paddingHorizontal: 15,
-        marginBottom: 15
+        marginVertical: 10
     },
     iconSearch: { 
         fontSize: 26, 

@@ -6,12 +6,12 @@ import {
     StyleSheet, 
     Platform, 
     Dimensions, 
-    ScrollView 
+    ScrollView,
+    StatusBar
 } from "react-native";
 
 import api from "@api/feed.json";
 import { IgIcon } from "@ui/components/ig-icon/ig-icon.component";
-import IgHeader from "@ui/components/ig-header/ig-header.component";
 
 import { BaseScreen } from "@ui/screen/base";
 
@@ -59,7 +59,6 @@ export class FeedScreen extends BaseScreen {
     renderContent() {
         return (
             <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0 }}>
-                <IgHeader />
                 <ScrollView
                     style={styles.container}
                     contentContainerStyle={{ paddingTop: Platform.OS === 'ios' ? 20 : 0 }}
@@ -70,6 +69,10 @@ export class FeedScreen extends BaseScreen {
                 </ScrollView>
             </View>
         );
+    }
+
+    screenWillFocus() {
+        StatusBar.setTranslucent(true)
     }
 }
 

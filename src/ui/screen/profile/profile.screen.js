@@ -3,7 +3,7 @@ import { View, Text, TextInput, Image, TouchableHighlight, StyleSheet } from 're
 
 import api from "@api/feed.json";
 
-class IgProfile extends Component {
+export default class Profile extends Component {
     renderProfile(profile, index) {
         return (
             <View key={index} style={{flex: 1}}>
@@ -64,8 +64,6 @@ class IgProfile extends Component {
         )
     }
 }
-
-export default IgProfile;
 
 const styles = StyleSheet.create({
     container: {

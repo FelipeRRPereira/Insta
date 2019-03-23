@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
 
-export default class IgLogin extends Component {
+export default class Login extends Component {
     render() {
         return (
             <LinearGradient style={styles.container} start={{ x: 1, y: 0 }} end={{ x: 0, y: 1 }} colors={['#A21391', '#CD106A', '#D82851', '#E95634', '#F8A64D']} >
