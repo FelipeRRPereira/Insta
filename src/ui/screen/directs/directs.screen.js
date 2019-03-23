@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
     View,
     Text,
@@ -10,12 +10,14 @@ import {
     ScrollView
 } from "react-native";
 
-import api from "../../../api/feed.json";
-import { IgIcon } from '../../components/ig-icon/ig-icon.component';
+import api from "@api/feed.json";
+import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
+
+import { BaseScreen } from "@ui/screen/base";
 
 const width = Dimensions.get('window').width;
 
-class IgDirects extends Component {
+export class DirectsScreen extends BaseScreen {
     renderHeaderDirect() {
         return (
             <View>
@@ -76,7 +78,7 @@ class IgDirects extends Component {
         )
     }
 
-    render() {
+    renderContent() {
         return (
             <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0 }}>
                 {this.renderHeaderDirect()}
@@ -93,8 +95,6 @@ class IgDirects extends Component {
         );
     }
 }
-
-export default IgDirects;
 
 const styles = StyleSheet.create({
     container: {

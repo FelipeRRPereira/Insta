@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, Image, TouchableHighlight, StyleSheet } from 'react-native'
 
-import api from "../../../api/feed.json";
+import api from "@api/feed.json";
 
 class IgProfile extends Component {
     renderProfile(profile, index) {

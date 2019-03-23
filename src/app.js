@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Navigator } from '../src/ui/navigator';
+import { Navigator } from '@ui/navigator';
 
 export default class App extends Component {
   render() {

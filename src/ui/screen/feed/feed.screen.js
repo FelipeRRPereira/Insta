@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { 
     View, 
     Text, 
@@ -9,11 +9,11 @@ import {
     ScrollView 
 } from "react-native";
 
-import api from "../../../api/feed.json";
-import { IgIcon } from "../../components/ig-icon/ig-icon.component";
-import IgHeader from "../../components/ig-header/ig-header.component";
+import api from "@api/feed.json";
+import { IgIcon } from "@ui/components/ig-icon/ig-icon.component";
+import IgHeader from "@ui/components/ig-header/ig-header.component";
 
-import { BaseScreen } from "../base";
+import { BaseScreen } from "@ui/screen/base";
 
 const width = Dimensions.get('window').width;
 

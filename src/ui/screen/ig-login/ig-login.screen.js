@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { IgIcon } from '../../components/ig-icon/ig-icon.component';
+import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
 
 export default class IgLogin extends Component {
     render() {

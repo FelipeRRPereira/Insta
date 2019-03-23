@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView, ScrollView, StyleSheet } from 'react-native';
 
-import api from '../../../api/feed.json';
-import { IgIcon } from '../../components/ig-icon/ig-icon.component.js';
+import api from '@api/feed.json';
+import { IgIcon } from '@ui/components/ig-icon/ig-icon.component.js';
 
-export default class IgMessage extends Component {
+export default class Message extends Component {
     renderHeader() {
         const uri = "https://img.freepik.com/free-photo/adorable-jack-russell-retriever-puppy-portrait_53876-64825.jpg?size=338&ext=jpg"
         return (

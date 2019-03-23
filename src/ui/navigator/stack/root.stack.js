@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 
 import { RootTabBar } from '../tabbar'
+import { IgHeader } from '@ui/components/ig-header/ig-header.component';
 
 export const RootStack = createStackNavigator(
     {

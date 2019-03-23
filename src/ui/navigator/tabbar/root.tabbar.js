@@ -1,13 +1,17 @@
 import { createBottomTabNavigator } from 'react-navigation';
 
-import { FeedStack } from '../../navigator/stack/feed';
+import { FeedStack } from '@ui/navigator/stack/feed';
+import { DirectsStack } from '@ui/navigator/stack/directs';
 import { TabBar } from './tabbar'
 
 export const RootTabBar = createBottomTabNavigator(
     {
-        FeedStack: {
+        /* FeedStack: {
             screen: FeedStack
-        },
+        }, */
+        DirectsStack: {
+            screen: DirectsStack
+        },        
     },
     {
         tabBarComponent: TabBar,
@@ -15,22 +19,8 @@ export const RootTabBar = createBottomTabNavigator(
             activeTintColor: "#000",
             inactiveTintColor: "#CCC"
         },
-        lazy: true,
+        lazy: false,
         swipeEnable: false
     }
        
 )
-
-/** tabBarComponent - procurar
- * 
- * {
-        tabBarComponent: TabBar,
-        tabBarOption: {
-            activeTintColor: "#000",
-            inactiveTintColor: "#CCC"
-        },
-        lazy: true,
-        swipeEnable
-    }
-    
- */

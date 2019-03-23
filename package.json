@@ -10,6 +10,7 @@
     "npm": "^6.9.0",
     "react": "16.8.3",
     "react-native": "0.59.1",
+    "react-native-camera": "^2.0.2",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-vector-icons": "^6.4.1",
     "react-navigation": "^3.4.0"
