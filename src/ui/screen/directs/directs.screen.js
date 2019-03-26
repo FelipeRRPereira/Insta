@@ -17,6 +17,8 @@ import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
 
 import { BaseScreen } from "@ui/screen/base";
 
+import { MESSAGE_ROUTES } from '@ui/navigator/routes/message'
+
 export class DirectsScreen extends BaseScreen {
     static navigationOptions = ({ navigation }) => {
         const title = navigation.getParam('title')
@@ -78,9 +80,18 @@ export class DirectsScreen extends BaseScreen {
             </View>
         )
     }
+
+    goToMessage() {
+        this.props.navigation.navigate(MESSAGE_ROUTES.MESSAGE)
+    }
+
     renderConversas(conversas, index) {
         return (
-            <View key={index} style={styles.directs} >
+            <TouchableOpacity 
+                key={index} 
+                style={styles.directs} 
+                onPress={() => this.goToDirects(conversas.mensagem)}
+            >
                 <View style={styles.perfil}
                 >
                     <Image
@@ -96,7 +107,7 @@ export class DirectsScreen extends BaseScreen {
                     <Text>{conversas.mensagem}</Text>
                 </View>
                 <IgIcon name="photo-camera" style={styles.cameraPerfil} />
-            </View>
+            </TouchableOpacity>
         )
     }
     
@@ -148,7 +159,7 @@ const styles = StyleSheet.create({
         color: "#000"
     },
     iconsDirect: { 
-        fontSize: 34, 
+        fontSize: 26, 
         color: "black",
         marginRight: 15
     },

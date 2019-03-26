@@ -18,7 +18,7 @@ export class NavBar extends Component {
 
     goToDirects(){
         this.props.navigation.navigate(DIRECTS_ROUTES.DIRECTS, {
-            title: 'Direct Message NavBar'
+            title: 'Direct'
         })
     }
 

@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Image, KeyboardAvoidingView, ScrollView, StyleSheet } from 'react-native';
+import { 
+    View, 
+    Text, 
+    Image, 
+    KeyboardAvoidingView, 
+    ScrollView, 
+    StyleSheet 
+} from 'react-native';
 
 import api from '@api/feed.json';
 import { IgIcon } from '@ui/components/ig-icon/ig-icon.component.js';
