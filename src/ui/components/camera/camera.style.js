@@ -6,8 +6,7 @@ const camera = StyleSheet.create({
     },
     rnCamera: {
         flex: 1,
-        flexDirection: "column",
-        justifyContent: "space-between"
+        flexDirection: "column-reverse"
     },
 })
 

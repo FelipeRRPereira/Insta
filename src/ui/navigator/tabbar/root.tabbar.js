@@ -2,16 +2,18 @@ import { createBottomTabNavigator } from 'react-navigation';
 
 import { FeedStack } from '@ui/navigator/stack/feed';
 import { DirectsStack } from '@ui/navigator/stack/directs';
-import { TabBar } from '@ui/components/tabbar'
+import { MessageStack } from '@ui/navigator/stack/message';
+
+import { TabBar } from '@ui/components/tabbar';
 
 export const RootTabBar = createBottomTabNavigator(
     {
-        FeedStack: {
+        /* FeedStack: {
             screen: FeedStack
-        },
-        /* DirectsStack: {
-            screen: DirectsStack
-        },    */     
+        }, */
+        MessageStack: {
+            screen: MessageStack
+        },        
     },
     {
         tabBarComponent: TabBar,

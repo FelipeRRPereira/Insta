@@ -9,7 +9,7 @@ import {
 
 import { IgIcon } from '../ig-icon/ig-icon.component';
 import { DIRECTS_ROUTES } from '@ui/navigator/routes/directs';
-import { CAMERA_ROUTES } from '@ui/navigator/routes/camera'
+import { CAMERA_ROUTES } from '@ui/navigator/routes/camera';
 
 export class NavBar extends Component {
     goToCamera() {

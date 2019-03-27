@@ -93,20 +93,6 @@ export class Camera extends Component {
                     type={RNCamera.Constants.Type.back}
                 >
                     <TouchableOpacity 
-                        style={{    
-                            alignItems: "flex-end",
-                            margin: 20
-                        }}
-                    >
-                        <Text
-                            style={{ 
-                                fontSize: 30,
-                                color: "white",
-                                opacity: 0.3
-                            }}
-                        >X</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity 
                         onPress={this.takePicture}
                         style={{ 
                             backgroundColor: "white",

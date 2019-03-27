@@ -90,7 +90,7 @@ export class DirectsScreen extends BaseScreen {
             <TouchableOpacity 
                 key={index} 
                 style={styles.directs} 
-                onPress={() => this.goToDirects(conversas.mensagem)}
+                onPress={() => this.goToMessage()}
             >
                 <View style={styles.perfil}
                 >
