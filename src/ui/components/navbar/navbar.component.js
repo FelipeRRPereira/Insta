@@ -36,7 +36,7 @@ export class NavBar extends Component {
                         <IgIcon name="photo-camera-empty" style={styles.iconStyle} />
                     </TouchableOpacity>
                     
-                    <IgIcon name="Insta-logo-black" style={{ fontSize: 140, color: "black" }} />
+                    <IgIcon name="Insta-logo-black" style={{ fontSize: 120, color: "black" }} />
                     
                     <TouchableOpacity
                         id="direct"
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     iconStyle: {
-        fontSize: 32,
+        fontSize: 30,
         color: "black"
     }
 });

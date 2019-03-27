@@ -13,7 +13,7 @@ import {
 import api from '@api/feed.json';
 import { IgIcon } from '@ui/components/ig-icon/ig-icon.component.js';
 
-import { CAMERA_ROUTES } from '@ui/navigator/routes/camera'
+import { CAMERA_ROUTES } from '@ui/navigator/routes/camera';
 
 export class MessageScreen extends Component {
     goToCamera() {

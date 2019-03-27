@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     iconStyle: {
-        fontSize: 32, 
+        fontSize: 30, 
         color: "black"
     }
 });

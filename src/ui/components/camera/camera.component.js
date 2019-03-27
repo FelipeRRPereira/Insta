@@ -96,14 +96,15 @@ export class Camera extends Component {
                         onPress={this.takePicture}
                         style={{ 
                             backgroundColor: "white",
-                            opacity: 0.3,
                             height: 80,
-                            borderRadius: 10,
+                            width: 80,
+                            borderRadius: 40,
                             margin: 10,
                             justifyContent: "center",
+                            alignSelf: 'center',
                             alignItems: 'center'
                         }}>
-                        <IgIcon name="photo-camera-empty" style={{ fontSize: 40, color: "black" }} />
+                        <IgIcon name="photo-camera-empty" style={{ fontSize: 40, opacity: 0.1 }} />
                     </TouchableOpacity>
                 </RNCamera>
             </View>

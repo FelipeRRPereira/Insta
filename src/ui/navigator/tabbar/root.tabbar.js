@@ -8,12 +8,12 @@ import { TabBar } from '@ui/components/tabbar';
 
 export const RootTabBar = createBottomTabNavigator(
     {
-        /* FeedStack: {
+        FeedStack: {
             screen: FeedStack
-        }, */
-        MessageStack: {
+        },
+        /* MessageStack: {
             screen: MessageStack
-        },        
+        }, */        
     },
     {
         tabBarComponent: TabBar,

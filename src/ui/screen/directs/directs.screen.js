@@ -17,7 +17,8 @@ import { IgIcon } from '@ui/components/ig-icon/ig-icon.component';
 
 import { BaseScreen } from "@ui/screen/base";
 
-import { MESSAGE_ROUTES } from '@ui/navigator/routes/message'
+import { MESSAGE_ROUTES } from '@ui/navigator/routes/message';
+import { CAMERA_ROUTES } from '@ui/navigator/routes/camera';
 
 export class DirectsScreen extends BaseScreen {
     static navigationOptions = ({ navigation }) => {
@@ -70,19 +71,24 @@ export class DirectsScreen extends BaseScreen {
     }
     renderFooterDirect() {
         return (
-            <View
+            <TouchableOpacity
                 style={styles.footerDirect}
+                onPress={() => this.goToCamera()}
             >
                 <IgIcon name="photo-camera" style={styles.iconFooter} />
                 <Text
                     style={styles.textFooter}
                 >Câmera</Text>
-            </View>
+            </TouchableOpacity>
         )
     }
 
     goToMessage() {
         this.props.navigation.navigate(MESSAGE_ROUTES.MESSAGE)
+    }
+
+    goToCamera() {
+        this.props.navigation.navigate(CAMERA_ROUTES.CAMERA)
     }
 
     renderConversas(conversas, index) {
