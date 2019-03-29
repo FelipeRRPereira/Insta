@@ -6,6 +6,7 @@ import { RNCamera } from 'react-native-camera';
 
 import { styles } from './camera.style'
 import { IgIcon } from '../ig-icon/ig-icon.component';
+import { StorageService } from '@services';
 
 const CAMERA_PERMITION_TYPE = 'camera'
 const MICROPHONE_PERMITION_TYPE = 'microphone'
@@ -16,7 +17,8 @@ export class Camera extends Component {
 
         this.state = {
             cameraPermission: null,
-            microphonePermission: null
+            microphonePermission: null,
+            images: []
         }
 
         this.onRef = this.onRef.bind(this)
@@ -62,7 +64,6 @@ export class Camera extends Component {
     }
 
     _hasPermission() {
-        debugger
         const { cameraPermission, microphonePermission } = this.state
 
         return cameraPermission === 'authorized' && microphonePermission === 'authorized'
@@ -79,7 +80,7 @@ export class Camera extends Component {
 
             this.camera.resumePreview()
 
-            alert(data.uri)
+            this.props.toPhoto(data.uri)
         }
     }
 

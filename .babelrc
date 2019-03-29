@@ -10,7 +10,8 @@
                     "@ui": "./src/ui",
                     "@api": "./src/api",
                     "@img": "./src/img",
-                    "@assets": "./src/assets"
+                    "@assets": "./src/assets",
+                    "@services": "./src/services"
                 }
             }
         ]

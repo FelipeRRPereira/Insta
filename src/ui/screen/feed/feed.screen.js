@@ -14,10 +14,48 @@ import api from "@api/feed.json";
 import { IgIcon } from "@ui/components/ig-icon/ig-icon.component";
 
 import { BaseScreen } from "@ui/screen/base";
+import { StorageService, DogService } from "@services";
+import { Story } from '@ui/components/story';
 
 const width = Dimensions.get('window').width;
 
 export class FeedScreen extends BaseScreen {
+    
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            posts: api.feed,
+            story: []
+        }
+
+        this.dogService = new DogService()
+    }
+
+    /* componentDidMount() {
+        StorageService.getObject('photo', posts).then(() => {
+            this.setState({ photo })
+        })
+    } */
+
+    componentDidMount() {
+        super.componentDidMount()
+    }
+
+    /* screenDidFocus(event) {
+        this.dogService.getRandomImage10()
+            .then(dog => this.setState({story: dog.message}))        
+        
+    } */
+
+    screenDidFocus(event) {
+        this.dogService.getRandomImage10()
+            .then(dog => this.setState(
+                {story: JSON.stringify(dog.message)}
+            ))
+            //.then(alert(this.state.story))
+    }
+
     renderPost(post, index) {
         return (
             <View key={index}>
@@ -56,6 +94,13 @@ export class FeedScreen extends BaseScreen {
         )
     }
 
+    renderStory() {
+        let arrayStory = this.state.story
+        return (
+            <Story story={arrayStory} />
+        )
+    }
+
     renderContent() {
         return (
             <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 20 : 0 }}>
@@ -63,6 +108,7 @@ export class FeedScreen extends BaseScreen {
                     style={styles.container}
                     contentContainerStyle={{ paddingTop: Platform.OS === 'ios' ? 20 : 0 }}
                 >
+                    {this.renderStory()}           
                     {
                         api.feed.map((post, index) => this.renderPost(post, index))
                     }
